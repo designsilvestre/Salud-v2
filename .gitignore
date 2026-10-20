@@ -1,0 +1,6 @@
+_work/
+_curadoria/
+cache/*.json
+api/config.php
+Thumbs.db
+.DS_Store
