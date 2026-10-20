@@ -16,7 +16,7 @@
   --serif:"DM Serif Display",Georgia,serif; --sans:"Hanken Grotesk",system-ui,sans-serif;
   --m:4rem; --g:1.5rem;
 }
-html{font-size:16px;scroll-behavior:smooth}
+html{font-size:16px;scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip}
 @media (max-width:1920px){html{font-size:.833333vw}}
 @media (max-width:1440px){html{font-size:1.111111vw}}
 @media (max-width:1024px){html{font-size:1.5625vw}}
@@ -24,7 +24,9 @@ html{font-size:16px;scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1.125rem/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.125rem/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip;max-width:100%}
+/* iOS ignora overflow do body: cada bloco corta o que passa da largura (clip não quebra o sticky) */
+main>section,.foot,.hero__stage{overflow-x:clip}
 img,video{display:block;max-width:100%}
 h1,h2,h3,p,figure,blockquote,dl,dd,ol,ul{margin:0}
 ol,ul{padding:0;list-style:none}
@@ -109,7 +111,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .hero{height:330vh}
   .hero__film{clip-path:inset(var(--split) 0 0 0)}
   .hero__video{transform:translateY(calc(var(--split) / 2))}
-  .hero__title{top:30%;font-size:3.1rem;background:linear-gradient(180deg,var(--ink) var(--cut,100%),#fff var(--cut,100%));-webkit-background-clip:text;background-clip:text}
+  .hero__title{top:calc(5.75rem + 1.6rem);transform:translateY(calc(-1 * var(--h1y,0px)));font-size:2.9rem;background:linear-gradient(180deg,var(--ink) var(--cut,100%),#fff var(--cut,100%));-webkit-background-clip:text;background-clip:text}
   .hero__place{top:5.75rem;bottom:auto}
   .hero__sub{left:var(--m);bottom:1.5rem;font-size:1rem}
   .hero__run-text{font-size:4.5rem}
