@@ -97,7 +97,6 @@
     const m = isMobile();
     const src = m ? video.dataset.srcMobile : video.dataset.srcDesktop;
     if (video.dataset.current === src) return;
-    if (m) video.poster = video.dataset.posterMobile;
     video.src = src; video.dataset.current = src;
     if (!reduce) video.play().catch(() => {});
   };
@@ -559,7 +558,7 @@
   // vídeo ilustrativo: carrega perto da tela, toca só quando visível
   const fVid = fear.querySelector('.fear__video');
   new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { if (!fVid.src) fVid.src = fVid.dataset.src; if (!reduce) fVid.play().catch(() => {}); }
+    if (e.isIntersecting) { if (!fVid.poster) fVid.poster = fVid.dataset.poster; if (!fVid.src) fVid.src = fVid.dataset.src; if (!reduce) fVid.play().catch(() => {}); }
     else fVid.pause();
   }), { rootMargin: '50% 0px' }).observe(fVid);
 

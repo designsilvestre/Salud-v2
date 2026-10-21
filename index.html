@@ -7,11 +7,11 @@
 <meta name="description" content="Implantes, prótese protocolo, lentes e facetas e clínica geral em Nova Friburgo. Atendimento com calma, sedação inalatória e nota 5,0 no Google.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#2A1A1E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/hero-poster-desktop.jpg" media="(min-width: 768px)">
-<link rel="preload" as="image" href="assets/img/hero-poster-mobile.jpg" media="(max-width: 767px)">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/dm-serif-display-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/hanken-grotesk-latin-wght-normal.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/img/hero-poster-desktop.jpg" media="(min-width: 768px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero-poster-mobile.jpg" media="(max-width: 767px)" fetchpriority="high">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Dentist","name":"Salud Odontologia","address":{"@type":"PostalAddress","streetAddress":"R. Dr. Ernesto Brasílio, 74, Sala 601","addressLocality":"Nova Friburgo","addressRegion":"RJ","postalCode":"28610-120","addressCountry":"BR"},"telephone":"+55 22 99209-6463","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"256"}}
@@ -24,7 +24,7 @@
 <header class="nav" id="nav">
   <div class="nav__in">
     <a class="nav__logo" href="#topo" aria-label="Salud Odontologia, início">
-      <img class="nav__logo-ink" src="assets/img/logo-word-ink.png" alt="Salud Odontologia" width="160" height="60">
+      <img class="nav__logo-ink" src="assets/img/logo-word-ink-sm.png" alt="Salud Odontologia" width="160" height="74">
     </a>
     <nav class="nav__links" aria-label="Principal">
       <a href="#depoimentos">Depoimentos</a>
@@ -51,8 +51,11 @@
 <section class="hero" id="topo" aria-label="Apresentação">
   <div class="hero__stage">
     <div class="hero__film">
+      <picture class="hero__poster" aria-hidden="true">
+        <source media="(max-width: 767px)" srcset="assets/img/hero-poster-mobile.jpg">
+        <img src="assets/img/hero-poster-desktop.jpg" alt="" width="1920" height="1080" fetchpriority="high" decoding="async">
+      </picture>
       <video class="hero__video" muted autoplay loop playsinline preload="metadata"
-        poster="assets/img/hero-poster-desktop.jpg"
         data-src-desktop="assets/video/hero-desktop.mp4"
         data-src-mobile="assets/video/hero-mobile.mp4"
         data-poster-mobile="assets/img/hero-poster-mobile.jpg"
@@ -75,7 +78,7 @@
   <div class="fear__stage">
     <p class="fear__lead">Odontologia <em>sem medo</em></p>
     <figure class="fear__photo">
-      <video class="fear__video" muted loop playsinline preload="none" poster="assets/img/sem-medo-poster.jpg" data-src="assets/video/sem-medo.mp4" aria-label="Profissional explica o tratamento ao paciente usando um modelo de arcada"></video>
+      <video class="fear__video" muted loop playsinline preload="none" data-poster="assets/img/sem-medo-poster.webp" data-src="assets/video/sem-medo.mp4" aria-label="Profissional explica o tratamento ao paciente usando um modelo de arcada"></video>
     </figure>
     <div class="fear__right">
       <p class="fear__giant" data-fill>Muita gente adia o dentista por medo ou por vergonha do sorriso. Aqui você é ouvido primeiro, entende o que vai ser feito e começa quando se sentir seguro.</p>
@@ -285,7 +288,7 @@
   <span class="foot__orb foot__orb--a" aria-hidden="true"></span><span class="foot__orb foot__orb--b" aria-hidden="true"></span><span class="foot__orb foot__orb--c" aria-hidden="true"></span>
   <div class="wrap foot__top">
     <div class="foot__brand">
-      <img src="assets/img/logo-word-light.png" alt="Salud Odontologia" width="420" height="160" loading="lazy">
+      <img src="assets/img/logo-word-light-sm.png" alt="Salud Odontologia" width="160" height="74" loading="lazy">
       <p>Clínica odontológica em Nova Friburgo. 22 anos cuidando de cada sorriso.</p>
     </div>
     <nav class="foot__col" aria-label="Rodapé">

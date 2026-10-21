@@ -2,6 +2,11 @@
    Base: ESTRUTURA_NOVA_Salud_2026-10-11.md (v2)
    Cor de marca: caramelo #CC9866 (amostrado do logo oficial) */
 
+/* fontes auto-hospedadas (antes vinham do Google Fonts e bloqueavam a renderização) */
+@font-face{font-family:"DM Serif Display";font-style:normal;font-weight:400;font-display:swap;src:url(../assets/fonts/dm-serif-display-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Serif Display";font-style:italic;font-weight:400;font-display:swap;src:url(../assets/fonts/dm-serif-display-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:"Hanken Grotesk";font-style:normal;font-weight:100 900;font-display:swap;src:url(../assets/fonts/hanken-grotesk-latin-wght-normal.woff2) format("woff2")}
+
 :root{
   --bg:#FCF7F2;
   --grad-cream:linear-gradient(135deg,#FCF7F2 0%,#F8EEE6 42%,#F2DFCF 78%,#E8C9B0 100%);
@@ -92,7 +97,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .hero{position:relative;height:380vh;background:var(--bg)}
 .hero__stage{position:sticky;top:0;height:100svh;overflow:hidden;--split:50%;--p:0}
 .hero__film{position:absolute;inset:0;clip-path:inset(0 0 0 var(--split));will-change:clip-path}
-.hero__video{width:100%;height:100%;object-fit:cover;transform:translateX(calc(var(--split) / 2));will-change:transform}
+.hero__poster,.hero__poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero__poster{transform:translateX(calc(var(--split) / 2))}
+.hero__video{position:relative;width:100%;height:100%;object-fit:cover;transform:translateX(calc(var(--split) / 2));will-change:transform}
 .hero__shade::after{content:"";position:absolute;inset:0;background:rgba(28,18,21,.38);opacity:var(--runo,0)}
 .hero__shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,18,21,.35) 0%,rgba(28,18,21,0) 30%,rgba(28,18,21,.15) 60%,rgba(28,18,21,.6) 100%)}
 .hero__title{position:absolute;inset-inline:0;top:50%;transform:translateY(calc(-50% - var(--h1y,0px)));padding-inline:var(--m);opacity:var(--h1o,1);
@@ -110,7 +117,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 @media (max-width:767px){
   .hero{height:330vh}
   .hero__film{clip-path:inset(var(--split) 0 0 0)}
-  .hero__video{transform:translateY(calc(var(--split) / 2))}
+  .hero__video,.hero__poster{transform:translateY(calc(var(--split) / 2))}
   .hero__title{top:calc(5.75rem + 1.6rem);transform:translateY(calc(-1 * var(--h1y,0px)));font-size:2.9rem;background:linear-gradient(180deg,var(--ink) var(--cut,100%),#fff var(--cut,100%));-webkit-background-clip:text;background-clip:text}
   .hero__place{top:5.75rem;bottom:auto}
   .hero__sub{left:var(--m);bottom:1.5rem;font-size:1rem}
