@@ -407,7 +407,7 @@
     ['Marlene', 'Facetas', 'depo-marlene', 'portal/p-marlene'],
     ['Luana', 'Atendimento', 'depo-luana', 'portal/p-luana'],
     ['Simone', 'Atendimento', 'depo-simone', 'portal/p-simone'],
-    ['Paciente', 'Canal e especialidades', 'depo-canal', 'portal/p-canal']
+    ['Livia Ruiz', 'Canal e especialidades', 'depo-canal', 'portal/p-canal']
   ];
   const vPlay = voices.querySelector('.voices__play'); let vPic = vPlay.querySelector('picture');
   const vCap = voices.querySelector('.voices__caption'), vI = voices.querySelector('.voices__i');
