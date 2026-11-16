@@ -99,7 +99,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .hero__film{position:absolute;inset:0;clip-path:inset(0 0 0 var(--split));will-change:clip-path}
 .hero__poster,.hero__poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero__poster{transform:translateX(calc(var(--split) / 2))}
-.hero__video{position:relative;width:100%;height:100%;object-fit:cover;transform:translateX(calc(var(--split) / 2));will-change:transform}
+.hero__tri{position:absolute;inset:0;display:flex;transform:translateX(calc(var(--split) / 2));will-change:transform}
+.hero__video{position:relative;flex:1 1 0;min-width:0;width:100%;height:100%;object-fit:cover}
+.hero__video+.hero__video{border-left:6px solid #2A1A1E}
 .hero__shade::after{content:"";position:absolute;inset:0;background:rgba(28,18,21,.38);opacity:var(--runo,0)}
 .hero__shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,18,21,.35) 0%,rgba(28,18,21,0) 30%,rgba(28,18,21,.15) 60%,rgba(28,18,21,.6) 100%)}
 .hero__title{position:absolute;inset-inline:0;top:50%;transform:translateY(calc(-50% - var(--h1y,0px)));padding-inline:var(--m);opacity:var(--h1o,1);
@@ -117,7 +119,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 @media (max-width:767px){
   .hero{height:330vh}
   .hero__film{clip-path:inset(var(--split) 0 0 0)}
-  .hero__video,.hero__poster{transform:translateY(calc(var(--split) / 2))}
+  .hero__tri,.hero__poster{transform:translateY(calc(var(--split) / 2))}
+  .hero__video+.hero__video{border-left:0}
+  .hero__video--side{display:none}
   .hero__title{top:calc(5.75rem + 1.6rem);transform:translateY(calc(-1 * var(--h1y,0px)));font-size:2.9rem;background:linear-gradient(180deg,var(--ink) var(--cut,100%),#fff var(--cut,100%));-webkit-background-clip:text;background-clip:text}
   .hero__place{top:5.75rem;bottom:auto}
   .hero__sub{left:var(--m);bottom:1.5rem;font-size:1rem}

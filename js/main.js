@@ -90,18 +90,28 @@
   // ===== Hero =====
   const hero = document.querySelector('.hero');
   const stage = hero.querySelector('.hero__stage');
-  const video = hero.querySelector('.hero__video');
+  const video = hero.querySelector('.hero__video:not(.hero__video--side)');
   const title = hero.querySelector('.hero__title');
   const run = hero.querySelector('.hero__run-text');
+  const sides = [...hero.querySelectorAll('.hero__video--side')];
+  const startAt = (v, src) => {
+    v.src = src; v.dataset.current = src;
+    const off = +v.dataset.offset || 0;
+    if (off) v.addEventListener('loadedmetadata', () => { v.currentTime = off % (v.duration || 1e9); }, { once: true });
+    if (!reduce) v.play().catch(() => {});
+  };
   const pickVideo = () => {
     const m = isMobile();
     const src = m ? video.dataset.srcMobile : video.dataset.srcDesktop;
-    if (video.dataset.current === src) return;
-    video.src = src; video.dataset.current = src;
-    if (!reduce) video.play().catch(() => {});
+    if (video.dataset.current !== src) startAt(video, src);
+    // tríptico no desktop: as laterais tocam o mesmo arquivo em outro ponto
+    sides.forEach(v => {
+      if (m) { v.pause(); return; }
+      if (v.dataset.current !== src) startAt(v, src); else if (!reduce) v.play().catch(() => {});
+    });
   };
   pickVideo();
-  if (reduce) { video.removeAttribute('autoplay'); video.pause(); }
+  if (reduce) { video.removeAttribute('autoplay'); [video, ...sides].forEach(v => v.pause()); }
 
   const heroRaw = () => {
     const span = hero.offsetHeight - 2 * innerHeight, y = scrollY - hero.offsetTop;
