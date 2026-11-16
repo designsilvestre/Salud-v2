@@ -93,9 +93,12 @@
   const video = hero.querySelector('.hero__video:not(.hero__video--side)');
   const title = hero.querySelector('.hero__title');
   const run = hero.querySelector('.hero__run-text');
+  const HERO_RATE = .7;   // vídeo do hero em câmera lenta (pedido do Rodrigo)
   const sides = [...hero.querySelectorAll('.hero__video--side')];
   const startAt = (v, src) => {
     v.src = src; v.dataset.current = src;
+    v.defaultPlaybackRate = v.playbackRate = HERO_RATE;
+    v.addEventListener('loadedmetadata', () => { v.playbackRate = HERO_RATE; }, { once: true });
     const off = +v.dataset.offset || 0;
     if (off) v.addEventListener('loadedmetadata', () => { v.currentTime = off % (v.duration || 1e9); }, { once: true });
     if (!reduce) v.play().catch(() => {});
