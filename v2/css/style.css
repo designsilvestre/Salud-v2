@@ -747,3 +747,18 @@ summary::after{font-weight:300}
 /* indicadores */
 .sprog b{background:var(--orange)}
 :focus-visible{outline-color:var(--toast)}
+
+/* hero com fundo caramelo e letras brancas (pedido da Dra., 18/11) */
+.hero{background:var(--deep)}
+.hero__stage{background:var(--losango) left -6rem bottom -5rem/30rem no-repeat}
+.hero__title,.hero__title{background:#fff;-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (max-width:767px){.hero__title{background:#fff;-webkit-background-clip:text;background-clip:text}}
+.hero__place{color:#fff}
+.nav:not(.is-solid) .nav__logo img{filter:brightness(0) invert(1)}
+.nav:not(.is-solid) .nav__burger span{background:#fff}
+.nav.is-solid{background:rgb(140 107 76/.92)}
+.nav.is-solid .nav__links a{color:#fff;opacity:1}
+.nav.is-solid .nav__logo img{filter:brightness(0) invert(1)}
+.nav.is-solid .nav__burger span{background:#fff}
+.nav:not(.is-solid) .nav__links{color:#fff}
+.nav.is-over-film .nav__links{background:rgb(140 107 76/.85);color:#fff}
