@@ -186,17 +186,21 @@
 
   // ===== Painel de tratamento: lateral (desktop) / bottom sheet (celular) =====
   const TREAT = {
-    implantes: ['01', 'Implantes', 'Para repor um ou mais dentes com firmeza.', 'O implante repõe um ou mais dentes com uma raiz artificial fixada no osso. Na avaliação, a equipe analisa o seu caso e explica as etapas, o tempo e os cuidados.', []],
-    protocolo: ['02', 'Prótese Protocolo', 'Para quem perdeu todos os dentes de uma arcada.', 'A prótese é fixada sobre implantes e devolve a mastigação e a segurança para sorrir. O plano é apresentado antes de começar, com cada etapa explicada.', ['protocolo-a', 'protocolo-3', 'protocolo-b']],
-    facetas: ['03', 'Lentes e Facetas', 'Para ajustar cor, forma e alinhamento.', 'Lâminas finas que ajustam cor, forma e alinhamento dos dentes. O planejamento é feito junto com você antes de começar.', ['facetas-1', 'facetas-2', 'facetas-3', 'facetas-4']],
-    ortodontia: ['04', 'Ortodontia', 'Para alinhar os dentes e a mordida.', 'Aparelhos para alinhar os dentes e corrigir a mordida, com acompanhamento em cada etapa.', ['ortodontia-1', 'ortodontia-2']],
-    geral: ['05', 'Clínica Geral', 'Para prevenção, limpeza e restaurações.', 'Prevenção, limpeza, restaurações, clareamento e tratamento de canal. A base para manter a saúde da boca em dia.', ['geral-1', 'geral-2']]
+    implantes: ['01', 'Implantes', 'Para repor um ou mais dentes perdidos.', 'O implante dentário devolve a segurança de mastigar, falar e sorrir como se fossem dentes naturais. Na Salud Odontologia, trabalhamos exclusivamente com implantes Neodent, uma das maiores e mais respeitadas marcas do mundo, para tratamentos mais rápidos, previsíveis e duráveis.', []],
+    protocolo: ['02', 'Prótese Protocolo', 'Dentes fixos para quem perdeu ou vai perder todos os dentes de uma arcada.', 'A prótese protocolo é indicada para pacientes que perderam todos os dentes ou têm indicação para extração total e buscam uma solução fixa e definitiva. Ela é parafusada diretamente sobre implantes dentários, substitui a dentadura tradicional com firmeza, deixa o céu da boca livre e devolve ao paciente a segurança para mastigar, sorrir e falar.', ['protocolo-a', 'protocolo-3', 'protocolo-b']],
+    facetas: ['03', 'Lentes e Facetas', 'Para ajustar cor, forma e alinhamento.', 'Na maioria dos casos, o procedimento é feito na mesma sessão, sem dor e sem desgaste dos dentes naturais. Trabalhamos com resinas de alto padrão, como a Estelite Omega.', ['facetas-1', 'facetas-2', 'facetas-3', 'facetas-4'], ['facetas-estelite', 'Resina Estelite Omega, usada nas facetas da Salud']],
+    ortodontia: ['04', 'Ortodontia', 'Aparelhos para alinhar os dentes e a mordida.', 'Aparelhos fixos metálicos e estéticos, com pacotes personalizados para cada paciente, contemplando todo o processo do tratamento, dos exames até a finalização do caso.', []],
+    alinhadores: ['05', 'Alinhadores Invisíveis', 'Alinhamento com discrição e planejamento digital.', 'Os alinhadores invisíveis são indicados para quem deseja corrigir o alinhamento dos dentes e problemas de mordida com total discrição, conforto e sem o uso de fios ou bráquetes metálicos. Trabalhamos com ClearCorrect, com escaneamento e planejamento digital para mais previsibilidade no tratamento.', [], ['alinhadores-1', 'Alinhadores invisíveis ClearCorrect']],
+    geral: ['06', 'Clínica Geral', 'Para prevenção, limpeza e restaurações.', 'Prevenção, limpeza, restaurações, extrações e tratamento de canal. A base para manter a saúde da boca em dia.', ['geral-1']]
   };
   const modal = document.getElementById('modal');
   const dIn = modal.querySelector('.drawer__in');
   let dTimer;
   function openDrawer(key) {
-    const [n, t, forTxt, txt, cases] = TREAT[key];
+    const [n, t, forTxt, txt, cases, media] = TREAT[key];
+    const mBox = modal.querySelector('.drawer__media');
+    mBox.hidden = !media;
+    mBox.innerHTML = media ? `<picture><source srcset="../assets/img/casos/${media[0]}.webp" type="image/webp"><img src="../assets/img/casos/${media[0]}.jpg" alt="${media[1]}" loading="lazy"></picture>` : '';
     modal.querySelector('.drawer__n').textContent = n;
     modal.querySelector('.h3').textContent = t;
     modal.querySelector('.drawer__for').textContent = forTxt;
@@ -242,7 +246,7 @@
 
   // ===== Quiz =====
   const QUIZ = [
-    { q: 'O que mais te incomoda hoje?', o: [['Falta de um ou mais dentes', 'imp'], ['Uso dentadura ou ponte e quero algo fixo', 'pro'], ['Cor ou formato dos dentes', 'fac'], ['Dentes tortos', 'ort']] },
+    { q: 'O que mais te incomoda hoje?', o: [['Falta de um ou mais dentes', 'imp'], ['Uso dentadura ou ponte e quero algo fixo', 'pro'], ['Cor ou formato dos dentes', 'fac'], ['Dentes tortos', 'ort'], ['Estou com dor', 'dor']] },
     { q: 'Há quanto tempo você convive com isso?', o: [['Menos de 1 ano', ''], ['De 1 a 5 anos', ''], ['Mais de 5 anos', '']] },
     { q: 'Você sente medo ou ansiedade no dentista?', o: [['Sim, bastante', 'med'], ['Um pouco', ''], ['Não', '']] },
     { q: 'Quando gostaria de começar?', o: [['O quanto antes', ''], ['Nos próximos meses', ''], ['Ainda estou pesquisando', '']] }
@@ -251,7 +255,8 @@
     imp: ['Implantes', 'Para repor dentes com firmeza, o implante costuma ser o caminho mais indicado.'],
     pro: ['Prótese Protocolo', 'Para quem quer trocar a dentadura por algo fixo, a prótese protocolo sobre implantes é a opção mais avaliada.'],
     fac: ['Lentes e Facetas', 'Para ajustar cor e formato, lentes e facetas costumam resolver com planejamento.'],
-    ort: ['Ortodontia', 'Para alinhar os dentes, o tratamento ortodôntico é o ponto de partida.']
+    ort: ['Ortodontia', 'Para alinhar os dentes, o tratamento ortodôntico é o ponto de partida, com aparelhos fixos ou alinhadores invisíveis.'],
+    dor: ['Clínica Geral', 'Para dor, o primeiro passo é uma avaliação para encontrar a causa e cuidar do seu conforto o quanto antes.']
   };
   const deck = document.querySelector('.deck');
   const ringFg = document.querySelector('.ring__fg');
@@ -499,7 +504,7 @@
 
   // ===== Convite: rostos entram em cascata; rodapé: nome gigante desliza =====
   const convite = document.querySelector('.convite');
-  const footEl = document.querySelector('.foot'), footGiant = document.querySelector('.foot__giant');
+  const footEl = document.querySelector('.foot'), footGiant = document.querySelector('.foot__giant, .foot__motto');
   convite.querySelectorAll('.convite__grid picture').forEach((pic, i) => pic.style.setProperty('--i', (i * 7) % 12));
   new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { convite.classList.add('is-in'); o.disconnect(); } }), { threshold: .2 }).observe(convite);
   const S2 = { cv: 0, fx: 0 };

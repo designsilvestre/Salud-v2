@@ -790,3 +790,16 @@ details[open]::details-content{block-size:auto}
 /* logo oficial com símbolo (branco) no header */
 .nav__logo img,.nav:not(.is-solid) .nav__logo img,.nav.is-solid .nav__logo img{filter:none;height:2.6rem}
 @media (max-width:767px){.nav__logo img{height:2.3rem}}
+
+/* tratamentos: 6 cards (alinhadores entra na última linha com 3 colunas) */
+.tile--t{grid-column:span 4}
+@media (max-width:767px){.tile--t{grid-column:span 1}.tile--t:last-child{grid-column:span 2}}
+/* foto de material no painel (resina, alinhador): fora da grade de casos */
+.drawer__media{margin:0 0 2rem;border-radius:12px;overflow:hidden;background:var(--sand)}
+.drawer__media img{width:100%;height:auto;display:block}
+.drawer__media[hidden]{display:none}
+/* rodapé: frase da Dra. no lugar do nome gigante */
+.foot__motto{margin:5rem 0 0;padding-inline:var(--m);max-width:62rem;font:400 4.6rem/1.04 var(--serif);letter-spacing:-.015em;color:#fff;transform:translateX(calc(var(--fx,0) * .4%))}
+.foot__motto em{font-style:italic;color:var(--peach)}
+@media (max-width:767px){.foot__motto{font-size:2.4rem;margin-top:3.5rem}}
+.foot__brand img{height:3rem}
