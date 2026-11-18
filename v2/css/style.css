@@ -641,7 +641,7 @@ details[open]::details-content{block-size:auto}
   --ink:#3F2A1F; --ink-soft:#5A3D2A; --on-dark:#FFFFFF; --peach:#F6E3CF;
   --caramel:#D08E4C; --bordo:#9A5E22; --bordo-h:#9A5E22;
   --line:#3F2A1F26; --line-dark:#FFFFFF33;
-  --losango:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%23fff' stroke-width='1.4' stroke-opacity='.22'%3E%3Crect x='40' y='40' width='90' height='90' rx='10' transform='rotate(45 85 85)'/%3E%3Crect x='80' y='70' width='90' height='90' rx='10' transform='rotate(45 125 115)'/%3E%3C/svg%3E");
+  --losango:url(../../assets/img/simbolo-deco-branco.png);
 }
 .foot__giant span{color:#fff}
 .foot__giant em{color:var(--peach)}
@@ -669,7 +669,7 @@ details[open]::details-content{block-size:auto}
 .fear__avatars img,.fear__bubble{border-color:var(--taupe)}
 
 /* números e outras seções escuras: caramelo profundo com losangos */
-.factsec{background:var(--losango) right -4rem top -3rem/22rem no-repeat,var(--grad-dark)}
+.factsec{background:var(--losango) right -5rem center/16rem no-repeat,var(--grad-dark)}
 .facts dd{color:#fff}
 .stack::after,.hero__stage::after{background:#3F2A1F}
 
@@ -687,7 +687,7 @@ details[open]::details-content{block-size:auto}
 /* dra */
 .dra__quote p .w.on{color:var(--toast)}
 .awards li{background:rgba(255,255,255,.5);border-radius:999px;padding:1rem 1.5rem}
-.awards li::before{background:var(--orange);box-shadow:none;border-radius:4px;transform:rotate(45deg) scale(.6)}
+.awards li::before{background:url(../../assets/img/simbolo-mostarda.png) center/contain no-repeat;box-shadow:none;border-radius:0;width:2rem;height:2rem}
 
 /* quiz */
 .qcard__opts button{border-radius:999px;padding:1rem 1.5rem}
@@ -720,7 +720,7 @@ details[open]::details-content{block-size:auto}
 .convite__text{color:#fff}
 
 /* rodapé */
-.foot{background:var(--losango) left -5rem top -4rem/26rem no-repeat,var(--grad-dark)}
+.foot{background:var(--losango) right -4rem top -3rem/24rem no-repeat,var(--grad-dark)}
 .foot__orb--a{background:#D08E4C;opacity:.22}.foot__orb--b{background:#F6E3CF;opacity:.14}.foot__orb--c{background:#B89978;opacity:.25}
 .foot__col h3{color:#fff}
 .foot__brand p,.foot__col small,.foot__bar{color:#fff}
@@ -732,7 +732,7 @@ details[open]::details-content{block-size:auto}
 
 /* hero com fundo caramelo e letras brancas (pedido da Dra., 18/11) */
 .hero{background:var(--deep)}
-.hero__stage{background:var(--losango) left -6rem bottom -5rem/30rem no-repeat}
+.hero__stage{background:var(--losango) left -5rem bottom -6rem/26rem no-repeat}
 .hero__title,.hero__title{background:#fff;-webkit-background-clip:text;background-clip:text;color:transparent}
 @media (max-width:767px){.hero__title{background:#fff;-webkit-background-clip:text;background-clip:text}}
 .hero__place{color:#fff}
@@ -764,7 +764,7 @@ details[open]::details-content{block-size:auto}
 .convite__veil{background:radial-gradient(ellipse 40% 48% at 50% 50%,rgba(150,100,26,.72),rgba(150,100,26,0) 100%),linear-gradient(180deg,rgba(150,100,26,.93) 0%,rgba(158,106,22,.84) 45%,rgba(150,100,26,.93) 100%)}
 .gallery{background:linear-gradient(180deg,rgba(150,100,26,0) 0,rgba(150,100,26,.5) 30svh,rgba(150,100,26,.75) calc(100svh - 1px),#96641A 100svh)}
 .tile picture::after{background:linear-gradient(155deg,#C9922E 0%,#9E6A16 45%,#3F2A1F 100%)}
-.awards li::before{background:var(--deep)}
+
 .stars{color:#C9922E}
 .foot__orb--a{background:#E0B04A}.foot__orb--c{background:#F6E3CF}
 .nav .btn{background:#fff;color:var(--toast)}.nav .btn:hover{background:#F6EEE4}
@@ -803,3 +803,15 @@ details[open]::details-content{block-size:auto}
 .foot__motto em{font-style:italic;color:var(--peach)}
 @media (max-width:767px){.foot__motto{font-size:1.55rem;margin-top:1.25rem;padding-right:var(--m)}}
 .foot__brand img{height:3rem}
+
+/* sem medo: fundo claro das avaliações do Google com texto em mostarda escura (pedido 18/11)
+   #8F6418: no creme 4,6 · no canto areia 3,2 (só em textos grandes); textos pequenos em chocolate */
+.fear{background:linear-gradient(135deg,#F6EEE4 0%,#EADBC9 50%,#DDC8B0 100%);color:#8F6418;--ink:#8F6418;--ink-soft:#5A3D2A;--line:#3F2A1F26}
+.fear__lead,.fear__quotes p{color:#8F6418}
+.fear__quotes cite{color:#5A3D2A}
+.fear__giant .w{color:rgba(143,100,24,.28)}
+.fear__giant .w.on{color:#8F6418}
+.fear__mark path{stroke:#8F6418}
+.fear__avatars img,.fear__bubble{border-color:#F2E6D8}
+.fear__bubble{background:#8F6418;color:#fff}
+.fear .link{color:#3F2A1F}.fear .link::before{background:#8F6418}
