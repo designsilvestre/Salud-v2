@@ -770,3 +770,13 @@ details[open]::details-content{block-size:auto}
 .nav .btn{background:#fff;color:var(--toast)}.nav .btn:hover{background:#F6EEE4}
 
 .nav__drawer{background:#F6EEE4F5}
+
+/* sem medo: taupe profundo com letras brancas (branco em #8A6E50: 4,7) */
+.fear{background:#8A6E50;color:#fff;--ink:#fff;--ink-soft:#fff;--line:#FFFFFF40}
+.fear__lead,.fear__quotes p,.fear__quotes cite{color:#fff}
+.fear__giant .w{color:rgba(255,255,255,.32)}
+.fear__giant .w.on{color:#fff}
+.fear__mark path{stroke:#fff}
+.fear__avatars img,.fear__bubble{border-color:#8A6E50}
+.fear__bubble{background:#fff;color:#5A4430}
+.fear .link{color:#fff}.fear .link::before{background:#fff}
