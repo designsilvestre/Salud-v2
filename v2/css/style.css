@@ -762,3 +762,27 @@ summary::after{font-weight:300}
 .nav.is-solid .nav__burger span{background:#fff}
 .nav:not(.is-solid) .nav__links{color:#fff}
 .nav.is-over-film .nav__links{background:rgb(140 107 76/.85);color:#fff}
+
+/* mostarda quente no lugar do marrom (pedido 18/11)
+   branco na mostarda #9E6A16: 4,6 · mostarda escura #8F6418 no creme: 4,6 · no branco: 5,2 */
+:root{
+  --deep:#9E6A16; --deep-2:#96641A; --toast:#8F6418; --bordo:#8F6418; --bordo-h:#8F6418;
+  --grad-dark:linear-gradient(160deg,#9E6A16 0%,#9A6717 55%,#96641A 100%);
+  --orange:#9E6A16; --orange-h:#8F6418; --caramel:#9E6A16;
+}
+/* botões: mostarda com texto branco */
+.btn,.hero__cta,.gallery .btn,.factsec .btn,.convite .btn,.foot .btn,.voices__foot .btn,.fab{background:var(--orange);color:#fff}
+.btn:hover,.hero__cta:hover{background:var(--orange-h)}
+/* sobre fundo mostarda o botão inverte: branco com texto mostarda */
+.gallery .btn,.factsec .btn,.convite .btn:not(.btn--ghost),.foot .btn:not(.btn--ghost),.voices__foot .btn{background:#fff;color:var(--toast)}
+.gallery .btn:hover,.factsec .btn:hover,.convite .btn:not(.btn--ghost):hover,.foot .btn:not(.btn--ghost):hover,.voices__foot .btn:hover{background:#F6EEE4}
+.hero__cta{background:#fff;color:var(--toast)}
+.nav.is-solid{background:rgb(158 106 22/.94)}
+.nav.is-over-film .nav__links{background:rgb(158 106 22/.88)}
+.convite__veil{background:radial-gradient(ellipse 40% 48% at 50% 50%,rgba(150,100,26,.72),rgba(150,100,26,0) 100%),linear-gradient(180deg,rgba(150,100,26,.93) 0%,rgba(158,106,22,.84) 45%,rgba(150,100,26,.93) 100%)}
+.gallery{background:linear-gradient(180deg,rgba(150,100,26,0) 0,rgba(150,100,26,.5) 30svh,rgba(150,100,26,.75) calc(100svh - 1px),#96641A 100svh)}
+.tile picture::after{background:linear-gradient(155deg,#C9922E 0%,#9E6A16 45%,#3F2A1F 100%)}
+.awards li::before{background:var(--deep)}
+.stars{color:#C9922E}
+.foot__orb--a{background:#E0B04A}.foot__orb--c{background:#F6E3CF}
+.nav .btn{background:#fff;color:var(--toast)}.nav .btn:hover{background:#F6EEE4}
