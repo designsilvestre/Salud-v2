@@ -798,8 +798,8 @@ details[open]::details-content{block-size:auto}
 .drawer__media{margin:0 0 2rem;border-radius:12px;overflow:hidden;background:var(--sand)}
 .drawer__media img{width:100%;height:auto;display:block}
 .drawer__media[hidden]{display:none}
-/* rodapé: frase da Dra. no lugar do nome gigante */
-.foot__motto{margin:5rem 0 0;padding-inline:var(--m);max-width:62rem;font:400 4.6rem/1.04 var(--serif);letter-spacing:-.015em;color:#fff;transform:translateX(calc(var(--fx,0) * .4%))}
+/* rodapé: nome gigante vem da direita, frase da Dra. menor vem da esquerda */
+.foot__motto{margin:1.75rem 0 0;padding-left:var(--m);max-width:56rem;font:400 2.6rem/1.15 var(--serif);letter-spacing:-.01em;color:#fff;transform:translateX(calc(var(--fx,0) * -1%));will-change:transform}
 .foot__motto em{font-style:italic;color:var(--peach)}
-@media (max-width:767px){.foot__motto{font-size:2.4rem;margin-top:3.5rem}}
+@media (max-width:767px){.foot__motto{font-size:1.55rem;margin-top:1.25rem;padding-right:var(--m)}}
 .foot__brand img{height:3rem}

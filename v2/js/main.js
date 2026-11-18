@@ -504,7 +504,7 @@
 
   // ===== Convite: rostos entram em cascata; rodapé: nome gigante desliza =====
   const convite = document.querySelector('.convite');
-  const footEl = document.querySelector('.foot'), footGiant = document.querySelector('.foot__giant, .foot__motto');
+  const footEl = document.querySelector('.foot'), footGiant = document.querySelector('.foot');
   convite.querySelectorAll('.convite__grid picture').forEach((pic, i) => pic.style.setProperty('--i', (i * 7) % 12));
   new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { convite.classList.add('is-in'); o.disconnect(); } }), { threshold: .2 }).observe(convite);
   const S2 = { cv: 0, fx: 0 };
