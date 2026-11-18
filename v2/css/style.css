@@ -815,3 +815,23 @@ details[open]::details-content{block-size:auto}
 .fear__avatars img,.fear__bubble{border-color:#F2E6D8}
 .fear__bubble{background:#8F6418;color:#fff}
 .fear .link{color:#3F2A1F}.fear .link::before{background:#8F6418}
+
+/* quiz em camadas: foto da recepção ao fundo, véu creme, símbolo do logo e cartões por cima */
+.quiz{position:relative;isolation:isolate;overflow:hidden;background:#F6EEE4}
+.quiz::before{content:"";position:absolute;inset:-2rem;z-index:-3;background:url(../../assets/img/estrutura-recepcao.webp) center/cover no-repeat;filter:blur(3px) saturate(.85);transform:scale(1.04)}
+.quiz::after{content:"";position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(90deg,rgba(246,238,228,.96) 0%,rgba(246,238,228,.9) 42%,rgba(246,238,228,.62) 70%,rgba(246,238,228,.5) 100%),
+             radial-gradient(60% 80% at 78% 50%,rgba(221,200,176,.55),rgba(221,200,176,0) 70%)}
+.quiz__grid{position:relative}
+.quiz__grid::before{content:"";position:absolute;z-index:-1;right:-6%;top:50%;width:min(38rem,48vw);aspect-ratio:700/666;transform:translateY(-50%);background:url(../../assets/img/simbolo-deco-mostarda.png) center/contain no-repeat;pointer-events:none}
+/* camadas de papel atrás do cartão */
+.deck::before,.deck::after{content:"";position:absolute;inset:0;border-radius:var(--radius-card);background:rgba(255,255,255,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 18px 50px -30px rgba(63,42,31,.35)}
+.deck::before{transform:rotate(-4deg) translate(-1.2rem,.6rem)}
+.deck::after{transform:rotate(3deg) translate(1rem,1rem);background:rgba(232,201,176,.45)}
+.qcard{background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.quiz__intro .h2{text-shadow:0 1px 0 rgba(255,255,255,.4)}
+@media (max-width:767px){
+  .quiz::after{background:linear-gradient(180deg,rgba(246,238,228,.95) 0%,rgba(246,238,228,.8) 45%,rgba(246,238,228,.6) 100%)}
+  .quiz__grid::before{right:-30%;top:72%;width:80vw}
+  .deck::before{transform:rotate(-3deg) translate(-.5rem,.4rem)}.deck::after{transform:rotate(2deg) translate(.5rem,.7rem)}
+}
