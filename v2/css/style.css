@@ -780,3 +780,13 @@ details[open]::details-content{block-size:auto}
 .fear__avatars img,.fear__bubble{border-color:#8A6E50}
 .fear__bubble{background:#fff;color:#5A4430}
 .fear .link{color:#fff}.fear .link::before{background:#fff}
+
+/* títulos em mostarda escura no lugar do marrom (pedido 18/11)
+   #8F6418: no creme 4,6 · no bege #EFE2D3 4,1 · no areia #DDC8B0 3,2 (títulos grandes passam a partir de 3) */
+.h2,.h3,.dra__years span,.reviews__score span:first-child,.qcard h3,.ring__label{color:#8F6418}
+.convite .h2,.convite .h2 em{color:#fff}
+.h2 em,.voices__title .h2 em{color:#8F6418}
+
+/* logo oficial com símbolo (branco) no header */
+.nav__logo img,.nav:not(.is-solid) .nav__logo img,.nav.is-solid .nav__logo img{filter:none;height:2.6rem}
+@media (max-width:767px){.nav__logo img{height:2.3rem}}
