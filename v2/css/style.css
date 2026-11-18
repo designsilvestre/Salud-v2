@@ -631,8 +631,6 @@ details[open]::details-content{block-size:auto}
    chocolate #3F2A1F no creme 11,7 · no taupe 5,0 · no laranja 4,9
    branco no caramelo profundo #8C6B4C 4,9 · mostarda tostada #9A5E22 no creme 4,6
    ========================================================== */
-@font-face{font-family:"Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url(../../assets/fonts/montserrat-latin-wght-normal.woff2) format("woff2")}
-@font-face{font-family:"Montserrat";font-style:italic;font-weight:100 900;font-display:swap;src:url(../../assets/fonts/montserrat-latin-wght-italic.woff2) format("woff2")}
 :root{
   --bg:#F6EEE4;
   --deep:#8C6B4C; --deep-2:#7A5C40; --taupe:#B89978; --sand:#DDC8B0; --orange:#D08E4C; --orange-h:#DA9C60; --toast:#9A5E22;
@@ -643,24 +641,13 @@ details[open]::details-content{block-size:auto}
   --ink:#3F2A1F; --ink-soft:#5A3D2A; --on-dark:#FFFFFF; --peach:#F6E3CF;
   --caramel:#D08E4C; --bordo:#9A5E22; --bordo-h:#9A5E22;
   --line:#3F2A1F26; --line-dark:#FFFFFF33;
-  --serif:"Montserrat",system-ui,sans-serif; --sans:"Montserrat",system-ui,sans-serif;
   --losango:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%23fff' stroke-width='1.4' stroke-opacity='.22'%3E%3Crect x='40' y='40' width='90' height='90' rx='10' transform='rotate(45 85 85)'/%3E%3Crect x='80' y='70' width='90' height='90' rx='10' transform='rotate(45 125 115)'/%3E%3C/svg%3E");
 }
-body{font-weight:400}
-/* títulos: letra fina com a palavra de destaque em negrito (como nos posts) */
-.h2,.h3,.hero__title,.fear__lead,.fear__giant,.voices__title .h2,.convite .h2,.dra__years span,.facts dt,.reviews__score span:first-child{font-weight:300;letter-spacing:-.025em}
-.h2 em,.h1 em,.hero__title em,.fear__lead em,.convite .h2 em,.voices__title .h2 em,.voices__head em{font-style:normal;font-weight:700}
-@media (min-width:768px){.hero__title{font-size:7rem;line-height:.95}}
-@media (max-width:767px){.hero__title{font-size:2.45rem;line-height:1}.fear__lead{font-size:2.3rem}.fear__giant{font-size:2rem}.h2{font-size:2.1rem}}
-.hero__run-text{font-weight:300;letter-spacing:-.03em}
-.fear__quotes p,.dra__quote p,.drawer__for{font-style:normal;font-weight:300}
-.dra__quote p{font-size:1.75rem;line-height:1.4}
-.foot__giant span{font-weight:700;color:#fff}
-.foot__giant em{font-style:normal;font-weight:300;color:var(--peach);letter-spacing:-.03em}
-.eyebrow,.voices__eyebrow,.foot__col h3,.drawer__label{letter-spacing:.3em;font-weight:500}
+.foot__giant span{color:#fff}
+.foot__giant em{color:var(--peach)}
 
 /* botões em pílula: laranja com texto chocolate; contorno no fundo escuro */
-.btn{background:var(--orange);color:var(--ink);font-weight:600}
+.btn{background:var(--orange);color:var(--ink)}
 .btn:hover{background:var(--orange-h)}
 .hero__cta,.gallery .btn,.factsec .btn,.convite .btn,.foot .btn,.voices__foot .btn,.fab{background:var(--orange);color:var(--ink)}
 .hero__cta:hover,.gallery .btn:hover,.factsec .btn:hover,.convite .btn:hover,.foot .btn:hover{background:var(--orange-h);filter:none}
@@ -669,7 +656,6 @@ body{font-weight:400}
 
 /* navegação */
 .nav.is-over-film .nav__links,.nav.is-solid{background:rgb(246 238 228/.8)}
-.nav__drawer{background:#F6EEE4F5;font-weight:300}
 
 /* hero */
 .hero__video+.hero__video{border-left-color:var(--deep)}
@@ -692,7 +678,6 @@ body{font-weight:400}
 .tile picture::after{background:linear-gradient(155deg,#D08E4C 0%,#9A5E22 45%,#3F2A1F 100%)}
 .tile::before{background:linear-gradient(180deg,rgba(63,42,31,0) 35%,rgba(63,42,31,.8))}
 .tile__n{color:#fff}
-.tile__name{font-weight:600;letter-spacing:-.02em}
 
 /* drawer */
 .drawer__n{color:var(--toast)}
@@ -703,7 +688,6 @@ body{font-weight:400}
 .dra__quote p .w.on{color:var(--toast)}
 .awards li{background:rgba(255,255,255,.5);border-radius:999px;padding:1rem 1.5rem}
 .awards li::before{background:var(--orange);box-shadow:none;border-radius:4px;transform:rotate(45deg) scale(.6)}
-.awards strong{font-weight:600}
 
 /* quiz */
 .qcard__opts button{border-radius:999px;padding:1rem 1.5rem}
@@ -712,7 +696,7 @@ body{font-weight:400}
 /* depoimentos */
 .voices__eyebrow,.voices__title .h2 em{color:var(--toast)}
 .voices__head{color:#fff}
-.voices__caption{color:#fff}.voices__caption strong{color:#fff;font-weight:700}
+.voices__caption{color:#fff}.voices__caption strong{color:#fff}
 .voices__count{color:#FFFFFFB3}
 .voices__foot p{color:#fff}
 .voices__rings{stroke:#fff}
@@ -728,8 +712,6 @@ body{font-weight:400}
 .stars{color:var(--orange)}
 
 /* faq */
-summary{font-weight:500}
-summary::after{font-weight:300}
 
 /* convite: véu caramelo sobre o mosaico */
 .convite{background:var(--deep-2)}
@@ -786,3 +768,5 @@ summary::after{font-weight:300}
 .stars{color:#C9922E}
 .foot__orb--a{background:#E0B04A}.foot__orb--c{background:#F6E3CF}
 .nav .btn{background:#fff;color:var(--toast)}.nav .btn:hover{background:#F6EEE4}
+
+.nav__drawer{background:#F6EEE4F5}
