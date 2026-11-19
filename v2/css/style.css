@@ -835,3 +835,10 @@ details[open]::details-content{block-size:auto}
   .quiz__grid::before{right:-30%;top:72%;width:80vw}
   .deck::before{transform:rotate(-3deg) translate(-.5rem,.4rem)}.deck::after{transform:rotate(2deg) translate(.5rem,.7rem)}
 }
+
+/* título dentro da roda: largura e tamanho acompanham o diâmetro do círculo (min(80vh,80vw,720px)),
+   então o texto quebra em mais linhas em telas baixas e nunca encosta nas fotos */
+@media (min-width:768px){
+  .voices__title{width:min(34rem,calc(min(80vh,80vw,720px) - 16rem))}
+  .voices__title .h2{font-size:min(3.25rem,5.2vh);text-wrap:balance}
+}

@@ -369,9 +369,7 @@
         t = { x: (i - (N - 1) / 2) * gap, y: 140 * (mob ? .6 : 1), r: 0, s: .9 };
       } else {
         const ang = (i / N) * 360 - 90, rad = ang * Math.PI / 180;
-        // roda em elipse (mais larga que alta) e fotos menores, para não cobrir o título no centro
-        const rx = mob ? radius * 1.12 : Math.min(W * .4, radius * 1.5);
-        t = { x: Math.cos(rad) * rx, y: Math.sin(rad) * radius + (mob ? 60 : 30), r: ang + 90, s: mob ? .85 : .78 };
+        t = { x: Math.cos(rad) * radius, y: Math.sin(rad) * radius + (mob ? 60 : 30), r: ang + 90, s: 1 };
       }
       // portal: card 0 cresce e desce até o centro
       if (i === 0) {
