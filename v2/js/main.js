@@ -324,7 +324,7 @@
   }
 
   // ===== Assinatura: cards → fileira → círculo → portal =====
-  const FACES = ['01-jose-paulo', '02-canal', '03-qualidade2', '04-qualidade', '05-eliana', '06-rejane', '07-marlene', '08-cristina', '09-delizete', '10-sedacao', '11-araci', '12-luana', '13-simone'];
+  const FACES = ['01-jose-paulo', '02-canal', '03-qualidade2', '04-qualidade', '05-eliana', '06-rejane', '07-marlene', '09-delizete', '10-sedacao', '11-araci', '12-luana', '13-simone'];
   const voices = document.querySelector('.voices');
   const vStage = voices.querySelector('.voices__stage');
   const cardsBox = voices.querySelector('.voices__cards');
@@ -369,7 +369,9 @@
         t = { x: (i - (N - 1) / 2) * gap, y: 140 * (mob ? .6 : 1), r: 0, s: .9 };
       } else {
         const ang = (i / N) * 360 - 90, rad = ang * Math.PI / 180;
-        t = { x: Math.cos(rad) * radius, y: Math.sin(rad) * radius + (mob ? 60 : 30), r: ang + 90, s: 1 };
+        // roda em elipse (mais larga que alta) e fotos menores, para não cobrir o título no centro
+        const rx = mob ? radius * 1.12 : Math.min(W * .4, radius * 1.5);
+        t = { x: Math.cos(rad) * rx, y: Math.sin(rad) * radius + (mob ? 60 : 30), r: ang + 90, s: mob ? .85 : .78 };
       }
       // portal: card 0 cresce e desce até o centro
       if (i === 0) {
@@ -420,11 +422,11 @@
   // ===== Portal vira carrossel de depoimentos (ref. Rebelliously "Voices") =====
   const VOICES = [
     ['José Paulo', 'Prótese protocolo', 'depo-jose-paulo', 'faces/01-jose-paulo-lg'],
-    ['Araci', 'Atendimento', 'depo-araci', 'portal/p-araci'],
+    ['Araci', 'Facetas', 'depo-araci', 'portal/p-araci'],
     ['Eliana', 'Facetas', 'depo-eliana', 'portal/p-eliana'],
     ['Marlene', 'Facetas', 'depo-marlene', 'portal/p-marlene'],
-    ['Luana', 'Atendimento', 'depo-luana', 'portal/p-luana'],
-    ['Simone', 'Atendimento', 'depo-simone', 'portal/p-simone'],
+    ['Luana', 'Atendimento infantil', 'depo-luana', 'portal/p-luana'],
+    ['Simone', 'Prótese', 'depo-simone', 'portal/p-simone'],
     ['Livia Ruiz', 'Canal e especialidades', 'depo-canal', 'portal/p-canal']
   ];
   const vPlay = voices.querySelector('.voices__play'); let vPic = vPlay.querySelector('picture');
